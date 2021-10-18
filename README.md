@@ -43,21 +43,17 @@ However, character segmentation is not practical because:
 * Too expensive 
 * Impossible in most cases
 
-For example, the above character segmentation is fine but the below one is challenging. In fact, the traditional method will face a problem where two or more characters are too close to each other like this:
-![architecture](https://i.imgur.com/jBbSJ19.png)
+This project will use state of the art CRNN model which is a combination of CNN, RNN and CTC loss for image-based sequence recognition tasks, specially OCR (Optical Character Recognition) task which is perfect for handwritten text.
 
-This project will use state of the art CRNN model which is a combination of CNN, RNN and CTC loss for image-based sequence recognition tasks, specially OCR (Optical Character Recognition) task which is perfect for CAPTCHAs.
-
-![architecture](https://i.imgur.com/npfKiCa.jpg)
+![architecture](https://i.imgur.com/vs1Cw7I.png)
 
 This model is much more superior than traditional way which does not involve any bounding box detection for each character (character segmentation). 
 
 In this model, the image will be dissected by a fixed number of timesteps in the RNN layers so as long as each character is seperated by two or three parts to be processed and decoded later then the spacing between each character is irrelevant like so:
 
-![architecture](https://i.imgur.com/TOpXFan.png)
+![boundingbox](https://i.imgur.com/Bp8LNui.png)
 
 Here is more details of my CRNN architecture:
-
 
 ```
 __________________________________________________________________________________________________
@@ -142,7 +138,7 @@ Non-trainable params: 5,120
 __________________________________________________________________________________________________
 ```
 
-If this CRNN model is confusing to understand for you, then you should check out my other CAPTCHA solver project on my github which has a simplier CRNN model to understand.
+If this CRNN model is confusing to understand for you, then you should check out my other [CAPTCHA solver project](https://github.com/TomHuynhSG/captchas-solver_crnn) on my github which has a simplier CRNN model to understand.
 
 More information regarding the implementation can be found in the jupyter notebook in the github.
 
