@@ -26,6 +26,8 @@ Here are 10 samples of the dataset:
 Here is the structure of the json file containing the labels:
 ![label](https://i.imgur.com/UKzANSI.png)
 
+Due to the large size of the dataset (>350 MB), the zip file can be downloaded at the google drive link: https://drive.google.com/file/d/1-hAGX91o45NA4nv1XUYw5pMw4jMmhsh5/view?usp=sharing
+
 ## Architecture
 
 Ideally, we want to detect text from a text image:
