@@ -143,7 +143,16 @@ If this CRNN model is confusing to understand for you, then you should check out
 
 More information regarding the implementation can be found in the jupyter notebook in the github.
 
+The number of callbacks I used are very helpful which are ModelCheckpoint, EarlyStopping and ReduceLROnPlateau which allows my model to keep on improving after 2 hours of training. 
+
 ## Result
+
+It took around 2 hours to train my model up to epoch 80 before early stopping callback is triggered with the lowest loss is 16.53810.
+
+![graphloss](https://i.imgur.com/ynyvnF4.png)
+
+As we can see, the loss for validation continue to increase for the first 6 epoches and sharply drop onwards and mostly stable all the way till epoch 80.
+
 
 We need to have the right evaluation/metrics for OCR task with edit distance library.
 
@@ -154,9 +163,19 @@ This only helps to calculate three evaluation metris for any OCR task:
 - WER (Word Error Rate)
 - SER (Sequence Error Rate)
 
-Here is my result for a test set:
+Here is my metrics for a test set:
 
-[To be continue]
+Character Error Rate: 0.04761427177354741
+Word Error Rate:      0.15659406463634423
+Sequence Error Rate:  0.8097826086956522
+
+We got a pretty good results with CER at 4% and WER at 15%! 
+
+I'm certain if I continue to apply for other techniques, this will help to reduce these numbers down. For example, I can try add to an attention layer between my CNN and RNN layers.
+
+Here are the prediction for each image in my test set:
+
+![result](https://i.imgur.com/bCaNyl5.png)
 
 
 ## License
