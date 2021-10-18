@@ -1,6 +1,9 @@
 # vietnamese-handwriting-recognition-ocr
 
+![](https://i.imgur.com/jbXXTch.png)
+
 ![intro](https://i.imgur.com/6MDY4Lm.jpg)
+
 
 Handwriting OCR for Vietnamese Address using state-of-the-art CRNN model implemented with Tensorflow. This was a challenge proposed by the Cinnamon AI Marathon.
 
@@ -153,30 +156,25 @@ It took around 2 hours to train my model up to epoch 80 before early stopping ca
 
 As we can see, the loss for validation continue to increase for the first 6 epoches and sharply drop onwards and mostly stable all the way till epoch 80.
 
-
 We need to have the right evaluation/metrics for OCR task with edit distance library.
 
-This is inspired from https://github.com/arthurflor23/handwritten-text-recognition/blob/master/src/data/evaluation.py
+Here are the important three evaluation metris for a test set:
 
-This only helps to calculate three evaluation metris for any OCR task:
-- CER (Character Error Rate)
-- WER (Word Error Rate)
-- SER (Sequence Error Rate)
+* CER (Character Error Rate): 0.04761427177354741
+* WER (Word Error Rate):      0.15659406463634423
+* SER (Sequence Error Rate):  0.8097826086956522
 
-Here is my metrics for a test set:
+We got a pretty good results with CER at 4% and WER at 15%!
 
-Character Error Rate: 0.04761427177354741
-Word Error Rate:      0.15659406463634423
-Sequence Error Rate:  0.8097826086956522
+There are plenty of examples where the model predicts every single character perfectly like this!
 
-We got a pretty good results with CER at 4% and WER at 15%! 
+![](https://i.imgur.com/zGD3czq.jpg)
 
 I'm certain if I continue to apply for other techniques, this will help to reduce these numbers down. For example, I can try add to an attention layer between my CNN and RNN layers.
 
-Here are the prediction for each image in my test set:
+Here are more examples of my model in action for the test set:
 
 ![result](https://i.imgur.com/bCaNyl5.png)
-
 
 ## License
 
