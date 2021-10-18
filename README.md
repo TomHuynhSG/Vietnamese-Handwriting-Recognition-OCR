@@ -142,7 +142,7 @@ Non-trainable params: 5,120
 __________________________________________________________________________________________________
 ```
 
-If this CRNN model is confusing to understand for you, then you should check out my other CAPTCHA solver project on my github which has a simplier CRNN model to understand.
+If this CRNN model is confusing to understand for you, then you should check out my other [CAPTCHA solver project](https://github.com/TomHuynhSG/captchas-solver_crnn) on my github which has a simplier CRNN model to understand.
 
 More information regarding the implementation can be found in the jupyter notebook in the github.
 
