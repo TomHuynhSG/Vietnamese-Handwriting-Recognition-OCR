@@ -51,6 +51,19 @@ This model is much more superior than traditional way which does not involve any
 
 In this model, the image will be dissected by a fixed number of timesteps in the RNN layers so as long as each character is seperated by two or three parts to be processed and decoded later then the spacing between each character is irrelevant like so:
 
+![architecture](https://i.imgur.com/TOpXFan.png)
+
+Here is more details of CRNN architecture:
+
+![architecture](https://i.imgur.com/7f1IU0Q.png)
+
+As you can see in this diagram, the last layer of CNN produces a feature vector of the shape 4\*8\*4 then we flatten the first and third dimension to be 16 and keep the second dimension to be the same to produce 16\*8. It's effective to cut the original image to be 8 vertical parts (red lines) and each parts contains 16 feature numbers. Since we have 8 parts to be processed as the output of CNN then we also choose 8 for our time step in the LSTM layer. After stacked LSTM layers with softmax (SM) activation function, we have CTC loss to optimize our probability table.
+
+More information regarding the implementation can be found in the jupyter notebook in the github.
+
+
+In this model, the image will be dissected by a fixed number of timesteps in the RNN layers so as long as each character is seperated by two or three parts to be processed and decoded later then the spacing between each character is irrelevant like so:
+
 ![boundingbox](https://i.imgur.com/Bp8LNui.png)
 
 Here is more details of my CRNN architecture:
